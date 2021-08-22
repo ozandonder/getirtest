@@ -1,0 +1,34 @@
+node {
+	stage('Checkout Project') {
+       git branch: 'master', 
+       credentialsId: '014e8564-8554-46de-bbd6-96d20e681bd9', 
+       url: 'ssh://git@stash.n11.com:7999/test/serenity-appium.git'
+   }
+   stage('Compile Project') {
+       sh "mvn clean install -DskipTests=true"
+   }
+   stage('ANDROID Tests') {
+   script {
+            try {
+                    echo 'Running tests...'
+                    sh """mvn clean verify -Dproperties=android.properties -Dtags='android' """
+                 }
+            catch (exc) {
+                    echo 'There are some test failures!!!'
+                    currentBuild.result = 'UNSTABLE'
+                                  slackSend(color: '#FF0000', message: "There are some test failures -> UNSTABLE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL}) @channel")
+                        }
+         }
+
+   }
+   stage('ANDROID Tests Result') {
+       publishHTML(target: [
+        reportName : 'ANDROID Tests',
+        reportDir:   'target/site/serenity',
+        reportFiles: 'index.html',
+        keepAll:     true,
+        alwaysLinkToLastBuild: true,
+        allowMissing: false
+    ])
+   }
+}
