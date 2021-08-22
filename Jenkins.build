@@ -1,7 +1,7 @@
 node {
 	stage('Checkout Project') {
        git branch: 'master',
-       url: 'https://github.com/acan98529/test.git'
+       url: 'https://github.com/ozandonder/getirtest.git'
    }
    stage('Compile Project') {
        sh "mvn clean install -DskipTests=true"
