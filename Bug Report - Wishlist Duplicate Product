@@ -1,0 +1,26 @@
+Priority: Minor
+
+Summary: Adding the same product multiple times to wishlist
+
+Reporter: Ozan Dönder
+
+Bug Environment
+Package: sampleGetir.apk
+Platform: Android
+Client Version: 10.0
+Screen Size: 1440 x 2960: 560dpi
+
+Description:
+If the button is click again for the product added to the wishlist on the category page, it adds it to the list again
+Wrong product checked at Category Page
+
+Test case:
+      User should pass onboarding screens
+      User clicks the WishList button for product "1"st
+      User clicks the WishList button for product "1"st
+      User click "My Wishlist" at Hamburger Menu
+      User should see "0" product at wish list
+
+Automation Tag: 4
+
+Attachments: images > wishlist_duplicate_product.jpg , wrong_icon_check.jpg

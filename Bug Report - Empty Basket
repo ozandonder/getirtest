@@ -1,0 +1,27 @@
+Priority: Major
+
+Summary: No warning message is given for a basket whose all elements have been deleted
+
+Reporter: Ozan Dönder
+
+Bug Environment
+Package: sampleGetir.apk
+Platform: Android
+Client Version: 10.0
+Screen Size: 1440 x 2960: 560dpi
+
+Description:
+No message and shop button is given for a empty basket whose all elements have been deleted
+
+Test case:
+     User should pass onboarding screens
+     User open "1"st product detail
+     User add the product to basket and set Product Info at Product Detail Page
+     User returns to last page
+     User click "cart" action icon
+     User should deletes all products from basket
+     User should see info message and shop button at empty basket
+
+Automation Tag: 3
+
+Attachments: images > excepted_basket.jpg , wrong_basket.jpg
