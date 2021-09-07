@@ -1,11 +1,11 @@
-package stepdefinitons.homepage;
+package stepdefinitons;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import steps.homepage.HomePageStep;
-import utils.runner.AppiumServerController;
+import steps.HomePageStep;
+import utils.AppiumServerController;
 
 import java.net.MalformedURLException;
 

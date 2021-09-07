@@ -1,7 +1,7 @@
-package stepdefinitons.productdetail;
+package stepdefinitons;
 
 import cucumber.api.java.en.*;
-import steps.productdetail.ProductDetailStep;
+import steps.ProductDetailStep;
 
 public class ProductDetailStepDefinitions {
 

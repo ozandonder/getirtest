@@ -1,8 +1,8 @@
-package stepdefinitons.categories;
+package stepdefinitons;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
-import steps.categories.CategoryStep;
+import steps.CategoryStep;
 
 public class CategoryStepDefinitions {
 
